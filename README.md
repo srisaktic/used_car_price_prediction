@@ -1,60 +1,98 @@
-🚗 BMW Price Prediction App
+# 🚗 BMW Price Prediction App
 
-🎯 Goal
+An end-to-end machine learning application that predicts the resale price of BMW cars based on vehicle specifications such as model, year, mileage, engine size, fuel type, and transmission.
 
-Predict the resale price of BMW cars based on specs like model, year, mileage, engine size, fuel type, etc.
-It’s a complete end-to-end ML project — from training a model to deploying it live on AWS EC2.
+This project covers the full workflow from data preprocessing and model training to API development, frontend integration, containerization, and cloud deployment.
 
-👉 Live Demo: http://3.150.203.235:8502/￼
+---
 
-⸻
+## 🎯 Project Goal
 
-⚙️ How It Works
-	1.	Data Preprocessing – Cleaned and engineered features (age, mileage/year, tax per engine, etc.)
-	2.	Model Training – Tested Linear Regression, Random Forest, and XGBoost → chose XGBoost (R² = 0.96)
-	3.	Backend (FastAPI) – Handles prediction requests from the UI
-	4.	Frontend (Streamlit) – Simple interface where users enter car details and get instant price predictions
-	5.	Containerization (Docker) – Both API and UI are containerized for easy deployment
-	6.	Deployment (AWS EC2) – Hosted on a free-tier EC2 instance using Docker Compose and Elastic IP
+The goal of this project is to build a production-ready ML application that can estimate the resale value of BMW cars using historical vehicle data.
 
-⸻
+It demonstrates how a machine learning model can be integrated into a complete software system with:
 
-🧰 Tech Stack
-	•	Python, Pandas, NumPy, Scikit-learn, XGBoost – ML pipeline
-	•	FastAPI – Backend API
-	•	Streamlit – Frontend UI
-	•	Docker + Docker Compose – To run API and UI together
-	•	AWS EC2 – For cloud deployment
+- a trained prediction model
+- a backend API for inference
+- a frontend UI for user interaction
+- Dockerized services for portability
+- deployment on AWS EC2
 
-⸻
+---
 
-🧱 Architecture
+## 🌐 Live Demo
 
+**Application URL:** http://3.150.203.235:8502/
+
+---
+
+## ⚙️ How It Works
+
+### 1. Data Preprocessing
+The raw dataset was cleaned and transformed to improve model performance. Feature engineering was applied to create additional useful variables such as:
+
+- car age
+- mileage per year
+- tax per engine size
+- other normalized vehicle attributes
+
+### 2. Model Training
+Multiple regression models were trained and evaluated, including:
+
+- Linear Regression
+- Random Forest Regressor
+- XGBoost Regressor
+
+After comparing performance, **XGBoost** was selected as the final model because it achieved the best results with an **R² score of 0.96**.
+
+### 3. Backend API
+A **FastAPI** service was built to handle prediction requests.  
+The API receives user input, preprocesses the values in the required format, loads the trained model, and returns the predicted price.
+
+### 4. Frontend UI
+A simple and interactive **Streamlit** interface allows users to:
+
+- enter BMW car details
+- submit the form
+- instantly receive the predicted resale price
+
+### 5. Containerization
+Both the frontend and backend were containerized using **Docker**, making the application easier to run consistently across environments.
+
+### 6. Deployment
+The application was deployed on **AWS EC2** using:
+
+- Docker
+- Docker Compose
+- Elastic IP
+
+This setup allows the UI and backend to run together as separate services in a cloud environment.
+
+---
+
+## 🧰 Tech Stack
+
+### Machine Learning
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+
+### Backend
+- FastAPI
+
+### Frontend
+- Streamlit
+
+### DevOps / Deployment
+- Docker
+- Docker Compose
+- AWS EC2
+
+---
+
+## 🧱 System Architecture
+
+```text
 User → Streamlit UI → FastAPI Backend → XGBoost Model → Prediction
-
-
-⸻
-
-💻 Run Locally
-
-git clone https://github.com/yourusername/bmw-price-predictor.git
-cd bmw-price-predictor
-docker compose up --build
-
-Then open http://localhost:8502/ in your browser.
-
-⸻
-
-🚀 Key Learnings
-	•	Built and connected ML models with APIs and UI
-	•	Managed microservices using Docker Compose
-	•	Deployed a full ML app to AWS EC2
-	•	Gained hands-on MLOps and cloud deployment experience
-
-⸻
-
-👨‍💻 Author
-
-Sri Sakticharan Nirmal Kumar
-Master’s in Data Science – NYIT
-📧 srisakticharan4@gmail.com
