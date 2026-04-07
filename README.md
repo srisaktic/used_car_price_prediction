@@ -1,98 +1,87 @@
-# 🚗 BMW Price Prediction App
+<h1 align="center">🚗 BMW Price Prediction App</h1>
 
-An end-to-end machine learning application that predicts the resale price of BMW cars based on vehicle specifications such as model, year, mileage, engine size, fuel type, and transmission.
+<p align="center">
+  Predict resale prices of BMW cars using Machine Learning 🚀
+</p>
 
-This project covers the full workflow from data preprocessing and model training to API development, frontend integration, containerization, and cloud deployment.
-
----
-
-## 🎯 Project Goal
-
-The goal of this project is to build a production-ready ML application that can estimate the resale value of BMW cars using historical vehicle data.
-
-It demonstrates how a machine learning model can be integrated into a complete software system with:
-
-- a trained prediction model
-- a backend API for inference
-- a frontend UI for user interaction
-- Dockerized services for portability
-- deployment on AWS EC2
+<p align="center">
+  <a href="http://3.150.203.235:8502/">
+    <img src="https://img.shields.io/badge/Live Demo-Click Here-green?style=for-the-badge" />
+  </a>
+</p>
 
 ---
 
-## 🌐 Live Demo
+## 🎯 Project Overview
 
-**Application URL:** http://3.150.203.235:8502/
+<p align="center">
+A complete end-to-end Machine Learning system that predicts the resale price of BMW cars based on features like model, year, mileage, engine size, and fuel type.
+</p>
 
 ---
 
 ## ⚙️ How It Works
 
-### 1. Data Preprocessing
-The raw dataset was cleaned and transformed to improve model performance. Feature engineering was applied to create additional useful variables such as:
+<table align="center">
+<tr>
+<td>
 
-- car age
-- mileage per year
-- tax per engine size
-- other normalized vehicle attributes
+🔹 **Data Preprocessing**  
+Cleaned data and engineered features (age, mileage/year, etc.)
 
-### 2. Model Training
-Multiple regression models were trained and evaluated, including:
+🔹 **Model Training**  
+Tested multiple models → selected **XGBoost (R² = 0.96)**
 
-- Linear Regression
-- Random Forest Regressor
-- XGBoost Regressor
+🔹 **Backend (FastAPI)**  
+Handles prediction requests
 
-After comparing performance, **XGBoost** was selected as the final model because it achieved the best results with an **R² score of 0.96**.
+🔹 **Frontend (Streamlit)**  
+Interactive UI for user input
 
-### 3. Backend API
-A **FastAPI** service was built to handle prediction requests.  
-The API receives user input, preprocesses the values in the required format, loads the trained model, and returns the predicted price.
+🔹 **Containerization**  
+Docker + Docker Compose
 
-### 4. Frontend UI
-A simple and interactive **Streamlit** interface allows users to:
+🔹 **Deployment**  
+AWS EC2 with Elastic IP
 
-- enter BMW car details
-- submit the form
-- instantly receive the predicted resale price
-
-### 5. Containerization
-Both the frontend and backend were containerized using **Docker**, making the application easier to run consistently across environments.
-
-### 6. Deployment
-The application was deployed on **AWS EC2** using:
-
-- Docker
-- Docker Compose
-- Elastic IP
-
-This setup allows the UI and backend to run together as separate services in a cloud environment.
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🧰 Tech Stack
 
-### Machine Learning
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- XGBoost
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,fastapi,streamlit,docker,aws,postgres" />
+</p>
 
-### Backend
-- FastAPI
-
-### Frontend
-- Streamlit
-
-### DevOps / Deployment
-- Docker
-- Docker Compose
-- AWS EC2
+<p align="center">
+<b>ML:</b> Scikit-learn, XGBoost &nbsp; | &nbsp;
+<b>Backend:</b> FastAPI &nbsp; | &nbsp;
+<b>Frontend:</b> Streamlit &nbsp; | &nbsp;
+<b>Cloud:</b> AWS EC2
+</p>
 
 ---
 
-## 🧱 System Architecture
+## 🧱 Architecture
 
-```text
-User → Streamlit UI → FastAPI Backend → XGBoost Model → Prediction
+<p align="center">
+<b>User → Streamlit UI → FastAPI → XGBoost Model → Prediction</b>
+</p>
+
+---
+
+## 📂 Project Structure
+
+```bash
+bmw-price-prediction/
+│
+├── backend/          # FastAPI service
+├── frontend/         # Streamlit UI
+├── model/            # Trained model
+├── data/             # Dataset
+├── notebooks/        # Training notebooks
+├── docker-compose.yml
+└── README.md
